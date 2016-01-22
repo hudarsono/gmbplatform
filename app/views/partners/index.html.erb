@@ -1,0 +1,23 @@
+<h1>Listing Partners</h1>
+
+<div style="max-width:1200px">
+  <table id="partners" class="display" data-source="<%= partners_url(format: "json") %>">
+
+      <thead>
+        <tr>
+          <td>Id</th>
+          <th>Name</th>
+          <th>Access email</th>
+          <th>Token</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+      </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to('New Partner', new_partner_path, {class: 'button'}) %>

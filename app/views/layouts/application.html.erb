@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gopher GMB</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <% if content_for?(:js) -%>
+    <script><%= yield(:js) -%></script>
+  <% end -%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="header">
+  <div style="margin:15px 15px;">
+        <div class="right">
+           <% if current_user.present? -%>
+               <span>Logged in as <%= current_user.email -%> | <%= link_to "Change Password", edit_user_password_path -%>  |<%= link_to "Logout", destroy_user_session_path, :method => 'delete' -%></span>
+           <% end -%>
+        </div>
+
+        <% if content_for?(:header) -%>
+          <%= yield(:header) -%>
+        <% end -%>
+
+        <% if notice.present? %>
+          <p id="notice"><%= notice %></p>
+        <% end %>
+
+        <% if alert.present? %>
+          <p id="alert"><%= alert %></p>
+        <% end %>
+  </div>
+</div>
+
+<div id="main">
+  <div id="navbar">
+    <ul>
+      <li><%= link_to "Partners", partners_path -%></li>
+    </ul>
+  </div>
+  <%= yield %>
+</div>
+</body>
+</html>

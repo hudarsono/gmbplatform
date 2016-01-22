@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  common_name: MyString
+  legal_name: MyString
+  oauth2_token: MyString
+  oauth2_token_mark: MyString
+  access_email: MyString
+
+two:
+  common_name: MyString
+  legal_name: MyString
+  oauth2_token: MyString
+  oauth2_token_mark: MyString
+  access_email: MyString
